@@ -41,7 +41,7 @@ for i in range(0, N - 1):
     d2Theta[i] = ( w**2*a*np.cos(theta[i] - w * t[i]) - g*np.sin(theta[i]) ) /b #Calculem acceleració actual amb la EOM treta usant el Lagrangià
     
     dTheta[i+1] = dTheta[i] + d2Theta[i]*dt #Calculem la velocitat al seguent instant amb l'acceleració calculada abans
-    theta[i+1] = theta[i] + dTheta[i]*dt #+ d2Theta[i]*(t[i+1]**2-t[i]**2)/2#+d2Theta[i]*t[i]*dt  #Calculem la posició al seguent instant
+    theta[i+1] = theta[i] + dTheta[i]*dt #+ d2Theta[i]*(t[i+1]-t[i])**2/2#+d2Theta[i]*t[i]*dt  #Calculem la posició al seguent instant
 
 
 #Posició del pèndol (si coneixem theta ja només és passar a cartesianes):
